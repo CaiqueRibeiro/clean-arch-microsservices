@@ -2,12 +2,10 @@ import ItemRepository from "../domain/repository/ItemRepository";
 
 export default class GetItem {
 
-	constructor (readonly itemRepository: ItemRepository) {
-	}
+	constructor (readonly itemRepository: ItemRepository) {}
 
 	async execute (idItem: number): Promise<Output> {
 		const item = await this.itemRepository.getItem(idItem);
-		console.log(new Date(), "GetItem");
 		return {
 			idItem: item.idItem,
 			description: item.description,

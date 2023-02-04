@@ -7,7 +7,6 @@ export default class GetItems {
 
 	async execute (): Promise<Output> {
 		const items = await this.itemRepository.getItems();
-		console.log(new Date(), "GetItems");
 		return items.map(item => ({
 			idItem: item.idItem,
 			description: item.description,
